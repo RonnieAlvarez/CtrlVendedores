@@ -1,4 +1,19 @@
 import { vendedor } from "./clases.js";
+let endpoint = 'https://api.binance.com/api/v3/ticker/price'
+fetch(endpoint)
+  .then( respuesta=> respuesta.json())
+  .then( datos => mostrarData(datos))
+  .catch( e => console.log(e))
+
+const mostrarData = (data)=>{
+  console.log(data)
+}
+
+// https://www.youtube.com/watch?v=IAOHydmDrmQ
+//minutos 12:19
+// https://www.youtube.com/watch?v=IAOHydmDrmQ
+
+
 
 const codvenVacio = () => codven == "" || vendedor2.codven.length < 3;
 const vendedor2 = new vendedor();
