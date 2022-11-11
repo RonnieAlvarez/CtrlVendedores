@@ -47,6 +47,7 @@
             <table id="target1" class="centert container mt-3 table table-striped table-hover m-0 p-0">
                 <span class="mt-5 fs-4 fw-bold">Listado de Vendedores </span> <span class="fw-bold fs-4"
                     id="cantvend"></span>
+                <p class="fecha" id="fecha"></p>
                 <thead>
                     <tr class="fw-bold bg-info bg-gradient m-0 p-0" onclick="seleccionafila(this)" id="myrow">
                         <td style="width: 70px;">Código</td>
@@ -70,6 +71,7 @@
 </body>
 <script type="module" src="./vendedor.js"></script>
 <script type="text/JavaScript" src="./utilidades.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
 <script>
     jQuery(document).ready(function () {
         jQuery('#nombreven').keypress(function (tecla) {

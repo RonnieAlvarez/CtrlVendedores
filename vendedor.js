@@ -14,6 +14,7 @@ let codifvend = "";
 document.getElementById("digitado").innerHTML = "";
 element.addEventListener("click", agregar);
 element1.addEventListener("click", borrar);
+fechaactual()
 Cambiartexto("encabezausuario", usuario,"Usuario");
 almacenamiento()
 codIni();
@@ -54,6 +55,14 @@ function almacenamiento() {
     //establece el codigo inicial
     //codIni()
   } else {return false}
+}
+function fechaactual(){
+  // coloca la fecha en color azul debajo del titulo Listado de vendedores de forma ASINCRONA 5 segundo despues de cargado el titulo
+setTimeout(()=>{  
+const DateTime = luxon.DateTime
+const ahoraa = DateTime.now()
+document.getElementById('fecha').innerHTML= '<b>' + ahoraa.toLocaleString(DateTime.DATE_HUGE) +'</b>'
+},5000)
 }
 function codIni() {
   //verifica el codigo del vendedor y agregar ceros a la izq en zfill
