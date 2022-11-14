@@ -1,24 +1,10 @@
 import { vendedor } from "./clases.js";
-let endpoint = 'https://api.binance.com/api/v3/ticker/price'
-fetch(endpoint)
-  .then( respuesta=> respuesta.json())
-  .then( datos => mostrarData(datos))
-  .catch( e => console.log(e))
-
-const mostrarData = (data)=>{
-  console.log(data)
-}
-
-// https://www.youtube.com/watch?v=IAOHydmDrmQ
-//minutos 12:19
-// https://www.youtube.com/watch?v=IAOHydmDrmQ
-
 
 
 const codvenVacio = () => codven == "" || vendedor2.codven.length < 3;
 const vendedor2 = new vendedor();
 let arrayvendedores = [];
-const usuario = sessionStorage.getItem("UsuarioActual");
+const usuario = sessionStorage.getItem("UsuarioActual") || 'Visitante'
 const element = document.getElementById("agregar");
 const element1 = document.getElementById("borrar");
 const tablatitulos = document.getElementById("target1");
@@ -29,6 +15,7 @@ let codifvend = "";
 document.getElementById("digitado").innerHTML = "";
 element.addEventListener("click", agregar);
 element1.addEventListener("click", borrar);
+coti()
 fechaactual()
 Cambiartexto("encabezausuario", usuario,"Usuario");
 almacenamiento()
@@ -77,7 +64,28 @@ setTimeout(()=>{
 const DateTime = luxon.DateTime
 const ahoraa = DateTime.now()
 document.getElementById('fecha').innerHTML= '<b>' + ahoraa.toLocaleString(DateTime.DATE_HUGE) +'</b>'
-},5000)
+},3000)
+}
+
+function coti(){
+let burl = "https://api.binance.com";
+let query = '/api/v1/ticker/24hr';
+query += '?symbol=BTCUSDT';
+let url = burl + query;
+
+//let infocruda = document.getElementById('infocruda');
+let isymbol = document.getElementById('symbol');
+let iprice = document.getElementById('coti');
+   
+fetch(url)
+.then(res => res.json())
+.then(data => {
+ // infocruda.innerHTML = JSON.stringify(data);
+ //console.log(isymbol)
+ //console.log(data.symbol)
+  isymbol.innerHTML = data.symbol;
+  iprice.innerHTML = zfill(data.lastPrice,3)
+})
 }
 function codIni() {
   //verifica el codigo del vendedor y agregar ceros a la izq en zfill

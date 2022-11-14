@@ -21,12 +21,15 @@
 <body>
     <nav class="container navbar">
         <span class="nav-brand fs-2 fw-bold" id="encabezausuario">Control de Vendedores</span><br>
-        <button class="btn btn-primary btn-sm " onclick="location.href='index.html'"  style="width:auto;">Home</button>
+        <button class="btn btn-primary btn-sm pe-4 " onclick="location.href='index.html'"
+            style="width:auto;">Home</button>
+        <button class="btn btn-primary btn-sm pe-4 me-5" onclick="location.href='cotizaciones.html'"
+            style="width:auto;">Crypto</button>
     </nav>
 
     <main class="container">
         <div class="centert d-flex flex-row justify-content-center">
-            <form id="venform" >
+            <form id="venform">
                 <p>
                     <span class="form-title fs-3">Datos Vendedor &#174 : </span><span class=" fs-3"
                         id="digitado"></span>
@@ -47,7 +50,10 @@
             <table id="target1" class="centert container mt-3 table table-striped table-hover m-0 p-0">
                 <span class="mt-5 fs-4 fw-bold">Listado de Vendedores </span> <span class="fw-bold fs-4"
                     id="cantvend"></span>
-                <p class="fecha" id="fecha"></p>
+                <div class="informacion">
+                    <span class="fecha" id="fecha"></span> <span id="symbol" class="symbol"></span>
+                    <span class="coti" id="coti"></span>
+                </div>
                 <thead>
                     <tr class="fw-bold bg-info bg-gradient m-0 p-0" onclick="seleccionafila(this)" id="myrow">
                         <td style="width: 70px;">Código</td>

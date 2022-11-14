@@ -90,7 +90,6 @@ color:var(--red)
  /*  border-color: var(--primary-1); */
 }
 .fecha{
-  font-size: 0.8em;
   color: #5941e2;
 }
 .eliminarRow{  
@@ -143,8 +142,21 @@ td:after {
   bottom: -3px;
 }
 
+#symbol, #coti {
+  color: var(--primary-2);
+  text-decoration: none;
+  text-align: end;
+  font-weight: bold;
+  padding: 0 1px;  
+  border: none;
+}
 
+.informacion{
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.8em;
 
+}
 
 
 .form-section {
