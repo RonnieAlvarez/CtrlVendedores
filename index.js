@@ -25,12 +25,15 @@ function iniciar(){
     contadorintentos += 1
     } else {
       modal.style.display = "none";
+     // document.getElementById('menuopciones').classList.add('d-none');
     document.getElementById("resultado").innerHTML="Demasiados intentos fallidos"
     window.stop();
   }
 } else {
    sessionStorage.setItem("UsuarioActual",usuario2.nombreusu)
-  window.location="vendedor.html"
+   document.getElementById('menuopciones').classList.remove('d-none');
+   modal.style.display = "none";
+  //window.location="vendedor.html"
 }
 }
 

@@ -16,8 +16,9 @@ fetch(endpoint)
 const mostrarData = (data) => {
   // console.log(data)
   let dbody = "";
+  let esNum = new Intl.NumberFormat( "es-ES",{minimumFractionDigits: 2 ,maximumFractionDigits: 7}); 
   for (let i = 0; i < data.length; i++) {
-    dbody += `<tr><td>${data[i].symbol}</td><td>${data[i].price}</td></tr>`;
+    dbody += `<tr><td>${data[i].symbol}</td><td>${esNum.format(data[i].price)}</td></tr>`;
     //console.log(dbody)
     document.getElementById("bdatos").innerHTML = dbody;
   }
@@ -40,7 +41,7 @@ function autocompletado() {
   console.log(pal);
   for (indice in preguntame) {
     var item = preguntame[indice];
-    console.log(item);
+   // console.log(item);
     //console.log(data)
     var nombre = item.symbol;
     var price = item.price;
