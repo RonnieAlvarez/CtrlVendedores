@@ -23,3 +23,16 @@ $(window).on("load resize", function() {
     $dropdown.off("mouseenter mouseleave");
   }
 });
+
+
+// codigo para el spinner
+//llama el spinner
+//$("#overlay").fadeIn(300);　
+
+// cuando termina de cargar el documento para el spinner
+$(function($){
+  setTimeout(function(){
+   $("#overlay").fadeOut(300);
+ },500);
+ 
+});

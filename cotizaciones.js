@@ -1,4 +1,5 @@
 // https://www.youtube.com/watch?v=IAOHydmDrmQ
+$("#overlay").fadeIn(300);　
 let endpoint = "https://api.binance.com/api/v3/ticker/price";
 var data
 fetch(endpoint)
@@ -31,29 +32,37 @@ function buscarpar(array) {
   buscar.addEventListener("onKeyUp", autocompletado);
 }
 function autocompletado() {
-  //console.log("ya");
-
+$('table').hide()
   document.getElementById("demo").innerHTML = "";
-  // data.symbol  data.price
   var preguntame = data;
   var pal = document.getElementById('buscar-pal').value || 'BTCUSD';
-  //var tam = pal.length;
-  console.log(pal);
   for (indice in preguntame) {
     var item = preguntame[indice];
-   // console.log(item);
-    //console.log(data)
     var nombre = item.symbol;
     var price = item.price;
-//    console.log(nombre);
     if (pal.length != 0 && nombre.length != 0) {
       if (nombre.toUpperCase().search(pal.toUpperCase()) != -1) {
         var node = document.createElement("li");
         node.innerHTML =
-        "<p>" + nombre + " price: " + price + "</p>";
-//          "<a href=" + nombre + ">" + nombre + " price: " + price + "</a>";
+        "<p>Par: " + nombre + " cotización: " + price + "</p>";
         document.getElementById("demo").appendChild(node);
       }
     }
   }
+  let button_limpia = document.createElement('button')
+  button_limpia.innerHTML='Regresar'
+  document.getElementById("demo").appendChild(button_limpia);
+  button_limpia.className += 'busca'
+  button_limpia.addEventListener('click',limbiar)
 }
+
+function limbiar(){
+  while(demo.firstChild){
+    demo.removeChild(demo.firstChild)
+}
+$('table').show()
+}
+
+$(function(){
+
+})
