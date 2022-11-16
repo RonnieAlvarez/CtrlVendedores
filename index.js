@@ -9,14 +9,11 @@ else if (el.attachEvent) el.attachEvent('onclick', iniciar);
 
 
 function iniciar(){
-  //document.getElementById('id01').style.display='block'
   let clave = usuario2.claveusu;
   let codigo;
   let respuesta;
   codigo=document.getElementById('uname').value
   respuesta = document.getElementById('psw').value
-  console.log(respuesta);
-  console.log();
   if (respuesta!=usuario2.claveusu){
    if (contadorintentos<=3){
      let erret = document.getElementById('psw')
@@ -25,7 +22,6 @@ function iniciar(){
     contadorintentos += 1
     } else {
       modal.style.display = "none";
-     // document.getElementById('menuopciones').classList.add('d-none');
     document.getElementById("resultado").innerHTML="Demasiados intentos fallidos"
     window.stop();
   }
@@ -33,7 +29,6 @@ function iniciar(){
    sessionStorage.setItem("UsuarioActual",usuario2.nombreusu)
    document.getElementById('menuopciones').classList.remove('d-none');
    modal.style.display = "none";
-  //window.location="vendedor.html"
 }
 }
 

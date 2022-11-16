@@ -18,28 +18,23 @@
 <body class="bodyindex">
     <nav class="container navbar">
         <span class="nav-brand fs-2 fw-bold"> Sistema de Control de Vendedores</span><br>
-        <!--      <button class="btn btn-primary btn-sm pe-4" onclick="location.href='Vendedor.html'" style="width:auto;">Ctrl Vendedores</button> -->
-        <!--      <button class="btn btn-primary btn-sm pe-4" onclick="location.href='cotizaciones.html'" style="width:auto;">Crypto</button> -->
         <button class="btn btn-success btn-sm pe-4 me-5 "
-            onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+         onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
     </nav>
 
     <main class="container">
         <div id="resultado"></div>
         <div id="id01" class="modal">
-
             <form class="modal-content animate">
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close"
                         title="Close Modal">&times;</span>
                     <img src="img_avatar2.png" alt="Avatar" class="avatar">
                 </div>
-
                 <div class="container">
                     <label for="uname"><b>Username</b></label>
                     <input type="text" placeholder="Enter Username: 002" name="uname" id="uname" required
                         onkeyup="saltar(event,'psw')" autofocus>
-
                     <label for="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password: 1234" name="psw" required id="psw"
                         onkeyup="saltar(event,'clickMe')">
@@ -48,7 +43,6 @@
                         <input type="checkbox" checked="checked" name="remember"> Remember me
                     </label>
                 </div>
-
                 <div class="container" style="background-color:#f1f1f1">
                     <button type="button" onclick="document.getElementById('id01').style.display='none'"
                         class="btn btn-danger btn-sm ">Cancel</button>
@@ -81,10 +75,8 @@
             </div>
           </nav>
         <script>
-            // Get the modal
             var modal = document.getElementById('id01');
-
-            // When the user clicks anywhere outside of the modal, close it
+            // si se hace click fuera del Modal este se cierra
             window.onclick = function (event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
