@@ -48,23 +48,23 @@ body {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 600;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 500;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: normal;
 }
 
 p {
   /* line-height: 30px; */
-  font-size: 18px;
+  font-size: 16px;
 }
 
 aa {
@@ -101,24 +101,24 @@ color:var(--red)
   /*border-color: var(--accent-1);*/
 }
 .rounded {
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
-.container {
+.pcontainer {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 
 /* FORMS */
 .form h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
 }
 
 .form h3 {
-  font-size: 20px;
+  font-size: 18 px;
   font-weight: 300;
   margin-bottom: 15px;
 }
@@ -128,6 +128,8 @@ color:var(--red)
 td {
   position: relative;
   border: 0px solid var(--primary-2);
+  line-height: 1em;
+  font-size: 1em;
 }
 
 td:after {
@@ -137,9 +139,10 @@ td:after {
   position: absolute;
   width: 95%;
   display: block;
-  height: 3px;
+  height: 2px;
   background-color: var(--primary-5);
-  bottom: -3px;
+  bottom: -2px;
+  line-height: 0.8em;
 }
 
 #symbol, #coti {
@@ -179,7 +182,7 @@ input{
   padding-left: 3px;
 }
 .input {
-  font-size: 14px;
+  font-size: 0.8em;
   margin-top: 1em;
   margin-bottom: 1.5em;
   padding: 0.75em 0.5em;
@@ -210,20 +213,30 @@ input:not(.btn):focus {
 /* NAVBAR */
 .navbar {
   background-color: white;
-  padding: 10px;
+  padding: 5px;
   box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
     0px -3px 7px 1px rgba(0, 0, 0, 0.07);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .nav-brand {
   font-weight: 450;
   text-decoration: none;
   padding-left: 20px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: initial;
+}
+
+.currency_main{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
+  0px -3px 7px 1px rgba(0, 0, 0, 0.07);
+  
 }

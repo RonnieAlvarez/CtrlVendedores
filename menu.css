@@ -1,5 +1,7 @@
 body {
     background: var(--blanco);
+    margin: 0%;
+    padding: 0%;
   }
   
   .navbar .nav-item:not(:last-child) {
@@ -24,6 +26,8 @@ body {
   background-color: var(--primary-3);
   border-style: solid 1px;
   border-color: var(--primary-2);
+  margin: 0%;
+  font-size: 0.9em;
 }
 #buscar-pal{
   border-radius: 7px;

@@ -1,5 +1,3 @@
-// https://www.youtube.com/watch?v=IAOHydmDrmQ
-$("#overlay").fadeIn(300);　
 let endpoint = "https://api.binance.com/api/v3/ticker/price";
 var data
 fetch(endpoint)
@@ -10,29 +8,24 @@ fetch(endpoint)
     mostrarData(datos);
   })
   .catch((e) => console.log(e));
-//const array = (data) => {
-//    console.log(e)
-//;
 
 const mostrarData = (data) => {
-  // console.log(data)
   let dbody = "";
   let esNum = new Intl.NumberFormat( "es-ES",{minimumFractionDigits: 2 ,maximumFractionDigits: 7}); 
   for (let i = 0; i < data.length; i++) {
     dbody += `<tr><td>${data[i].symbol}</td><td>${esNum.format(data[i].price)}</td></tr>`;
-    //console.log(dbody)
     document.getElementById("bdatos").innerHTML = dbody;
   }
+  document.getElementById('overlay').style.display='none'
 };
 let buscaa = document.getElementById('busca')
 buscaa.addEventListener('click',autocompletado)
-//let data = datos
 var buscar = document.getElementById('buscar-pal');
 function buscarpar(array) {
   buscar.addEventListener("onKeyUp", autocompletado);
 }
 function autocompletado() {
-$('table').hide()
+document.querySelector('table').style.display='none'
   document.getElementById("demo").innerHTML = "";
   var preguntame = data;
   var pal = document.getElementById('buscar-pal').value || 'BTCUSD';
@@ -60,9 +53,5 @@ function limbiar(){
   while(demo.firstChild){
     demo.removeChild(demo.firstChild)
 }
-$('table').show()
+document.querySelector('table').style.display='block'
 }
-
-$(function(){
-
-})

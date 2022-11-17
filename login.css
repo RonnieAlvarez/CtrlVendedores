@@ -92,7 +92,7 @@ span.psw {
   right: 25px;
   top: 0;
   color: var(--negro);
-  font-size: 25px;
+  font-size: 1em;
   font-weight: bold;
 }
 
