@@ -11,9 +11,10 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/cotizaciones-css.css">
     <link rel="stylesheet" href="../css/menu.css">
+    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body class="currencies">
     <div id="overlay">
         <div class="cv-spinner">
             <span class="spinner"></span>
@@ -43,7 +44,7 @@
         </div>
     </nav>
 
-    <main class="pcontainer d-flex flex-column align-items-center">
+    <main class="pcontainer d-flex flex-column align-items-center fondo w-50">
         <h4>Cotizaciones de Criptomonedas</h4>
         <div >
             <input type="text" id="buscar-pal"> <button id="busca" class="busca ">Buscar</button>
@@ -59,7 +60,7 @@
                     <th>Precio</th>
                 </tr>
             </thead>
-            <tbody id="bdatos">
+            <tbody id="bdatos w-50">
 
             </tbody>
         </table>

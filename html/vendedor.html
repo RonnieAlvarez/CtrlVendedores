@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    
+    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <title>Control Vendedores</title>
 </head>
 <style>
@@ -20,52 +20,58 @@
 
 <body class="letraPequena">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark m-0 p-0 " id="menuopciones">
-        <div class="container-fluid w-50">
-            
-        <div class="dropdown letraPequena">
-            <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown Menu
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="../index.html">Inicio</a></li>
-              <li><a class="dropdown-item active" href="./vendedor.html">Vendedores</a></li>
-              <li><a class="dropdown-item" href="./cotizaciones.html">CryptoMonedas</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="./currency.html">Conversor de Divisas</a></li>
-            </ul>
-          </div>
+        <div class="container-fluid w-75">
+
+            <div class="dropdown letraPequena">
+                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Dropdown Menu
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="../index.html">Inicio</a></li>
+                    <li><a class="dropdown-item active" href="./vendedor.html">Vendedores</a></li>
+                    <li><a class="dropdown-item" href="./cotizaciones.html">CryptoMonedas</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="./currency.html">Conversor de Divisas</a></li>
+                </ul>
+            </div>
     </nav>
-    <nav class="container navbar m-0 p-0 justify-content-center">
+    <nav class="container navbar m-0 p-0 justify-content-center w-75">
         <span class="nav-brand m-0 p-0 fw-bold " id="encabezausuario">Control de Vendedores</span>
     </nav>
 
-    <main class="container w-50">
+    <main class="container w-75">
         <div class="centert d-flex flex-row justify-content-center">
             <form id="venform" name="venform">
-                <span class="form-title ">Datos Vendedor &#174 : </span><span 
-                        id="digitado"></span> <br>
-                <input  type="text" class="datos " required name="codven" id="codven"
-                    placeholder="Codigo ej('001')" onkeyup="saltar(event,'nombreven')" pattern="[1,15]+" autofocus maxlength="3">
-                <input style="text-transform: capitalize;" type="text" class="datos" required
-                    name="nombreven" id="nombreven" onfocus="this.value=''" placeholder="Nombre"
-                    onkeyup="saltar(event,'comisionven')" pattern="[A-Za-z0-9_-]+">
-                <input  type="number" class="datos" required name="comisionven" id="comisionven"
-                    onfocus="this.value=''" placeholder="Comisión" onkeyup="saltar(event,'agregar')" pattern="[1,15]+" maxlength="4"><br>
-                <button type="btn btn-sm button" class="btn btn-success btn-sm agregar me-1 ms-3 " id="agregar"
-                    onkeyup="saltar(event,'nombreven')">Enviar</button><button class="btn btn-danger btn-sm"
-                    type="reset" id="borrar" onkeyup="saltar(event,'nombreven')">Borrar</button><br>
+                <span class="form-title ">Datos Vendedor &#174 : </span><span id="digitado"></span> <br>
+                <input type="text" class="datos " required name="codven" id="codven" placeholder="Codigo ej('001')"
+                    onkeyup="saltar(event,'nombreven')" pattern="[1,15]+" autofocus maxlength="3">
+                <input style="text-transform: capitalize;" type="text" class="datos" required name="nombreven"
+                    id="nombreven" onfocus="this.value=''" placeholder="Nombre" onkeyup="saltar(event,'comisionven')"
+                    pattern="[A-Za-z0-9_-]+">
+                <input type="number" class="datos" required name="comisionven" id="comisionven" onfocus="this.value=''"
+                    placeholder="Comisión" onkeyup="saltar(event,'agregar')" pattern="[1,15]+" maxlength="4"><br>
+                <div class="container d-flex justify-content-end ">
+                    <button type="submit" class="btn btn-success btn-sm agregar me-1 mt-2 ms-3 " id="agregar"
+                        onkeyup="saltar(event,'nombreven')">Enviar</button>
+                    <button class="btn btn-danger btn-sm mt-2" type="reset" id="borrar"
+                        onkeyup="saltar(event,'nombreven')">Borrar</button><br>
+                </div>
             </form>
         </div>
         <div class="table-responsive-sm letraPequena">
             <table id="target1" class="centert container mt-3 table table-striped table-hover ">
-                <div class="d-sm-flex letraPequena">
-                <span class="mt-5 fw-bold">Listado de Vendedores </span> <span class="fw-bold "
-                    id="cantvend"></span>
-                <div class="informacion">
-                    <span class="fecha" id="fecha"></span> <span id="symbol" class="symbol"></span>
-                    <span class="coti" id="coti"></span>
+                <div class="d-sm-flex d-flex  justify-content-center letraPequena">
+                    <p class="mt-5 fw-bold">Listado de Vendedores </p><br>
+                    <div class="informacion d-flex flex-row-reverse justify-content-between">
+                        <span class="fw-bold " id="cantvend"></span>
+                        <span class="fecha me-3" id="fecha"></span>
+                        <span id="symbol" class="symbol me-3"></span>
+                        <span class="coti me-3" id="coti"></span>
+                    </div>
                 </div>
-            </div>
                 <thead>
                     <tr class="fw-bold bg-info bg-gradient m-0 p-0" onclick="seleccionafila(this)" id="myrow">
                         <td style="width: 20px;">Código</td>
@@ -83,20 +89,20 @@
 
         </div>
     </main>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
-<!--         <script src="./menu.js"></script> -->
-        <script>
-            var modal = document.getElementById('id01');
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                    document.getElementById('menuopciones').classList.add('d-none');
-                } 
+    <!--         <script src="./menu.js"></script> -->
+    <script>
+        var modal = document.getElementById('id01');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                document.getElementById('menuopciones').classList.add('d-none');
             }
-        </script>
+        }
+    </script>
 
 
 </body>
@@ -105,33 +111,34 @@
 <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
 
 <script>
-miformulario = document.querySelector('#venform')
-miformulario.codven.addEventListener('keypress', function(e){
-    if (!soloNumeros(event)){
-        event.preventDefault()
-    }
-})
-miformulario.comisionven.addEventListener('keypress', function(e){
-    if (!soloNumeros(event)){
-        event.preventDefault()
-    }
-})
+    miformulario = document.querySelector('#venform')
+    miformulario.codven.addEventListener('keypress', function (e) {
+        if (!soloNumeros(event)) {
+            event.preventDefault()
+        }
+    })
+    miformulario.comisionven.addEventListener('keypress', function (e) {
+        if (!soloNumeros(event)) {
+            event.preventDefault()
+        }
+    })
 
-miformulario.nombreven.addEventListener('keypress', function(e){
-    if (!soloLetrasNumeros(e)){
-        e.preventDefault()
+    miformulario.nombreven.addEventListener('keypress', function (e) {
+        if (!soloLetrasNumeros(e)) {
+            e.preventDefault()
+        }
+    })
+    function soloLetrasNumeros(e) {
+        var key = e.charCode;
+        // console.log(key)
+        return ((key > 97 || key < 122) && (key > 65 || key < 90) && (key = 45) && (key = 32))
     }
-})
-function soloLetrasNumeros(e){
-    var key = e.charCode;
-   // console.log(key)
-    return ((key > 97 || key < 122) && (key > 65 || key < 90) && (key = 45) && (key = 32))
-}
 
-function soloNumeros(e){
-    var key = e.charCode;
-    //console.log(key);
-    return key >= 48 && key <= 57;
-}
+    function soloNumeros(e) {
+        var key = e.charCode;
+        //console.log(key);
+        return key >= 48 && key <= 57;
+    }
 </script>
+
 </html>

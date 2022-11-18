@@ -42,6 +42,11 @@
   background-position: top;
   background-repeat: no-repeat;
 }
+.currencies {  
+  background-image: url(../imgs/foreign-exchange.webp);
+  background-position: top;
+  background-repeat: repeat;
+}
 body {
   background-color: var(--neutral-5);
   margin: 0;
@@ -232,9 +237,13 @@ justify-content: center;
 align-items: center;
 box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
   0px -3px 7px 1px rgba(0, 0, 0, 0.07);
-  
+ background-color: var(--neutral-4); 
 }
-
+.fondo{
+  background-color: var(--neutral-4); 
+  box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
+  0px -3px 7px 1px rgba(0, 0, 0, 0.07);
+}
 @media (max-width: 600px) {
   .letraPequena{
     font-size: 0.8em;
