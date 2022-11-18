@@ -45,11 +45,11 @@ function almacenamiento() {
      // console.log(arrayvendedores[key].codven);
       let tablaven = document.getElementById("target1");
       tablaven.innerHTML += `<tr>
-      <td style="width: 70px;">${arrayvendedores[key].codven} </td>
-      <td style="width: 150px;">${arrayvendedores[key].nombreven} </td>
-      <td style="width: 70px;">${Number.parseFloat(arrayvendedores[key].comisionven).toFixed(2)} </td>
-      <td style="width: 70px;">${arrayvendedores[key].nombreclave} </td>
-      <td style="width: 50px;">${arrayvendedores[key].fechaingreso} </td>
+      <td style="width: 40px;">${arrayvendedores[key].codven} </td>
+      <td style="width: 120px;">${arrayvendedores[key].nombreven} </td>
+      <td style="width: 40px;">${Number.parseFloat(arrayvendedores[key].comisionven).toFixed(2)} </td>
+      <td style="width: 40px;">${arrayvendedores[key].nombreclave} </td>
+      <td style="width: 40px;">${arrayvendedores[key].fechaingreso} </td>
       <td class="eliminarRow">Eliminar</td>
       </tr>`;
     }
@@ -220,11 +220,11 @@ function lineaven() {
   //crea cada linea de la tabla con informacion digitada
   let tablaven = document.getElementById("target1");
   tablaven.innerHTML += `<tr>
-  <td style="width: 70px;">${vendedor2.codven} </td>
-  <td style="width: 150px;">${vendedor2.nombreven} </td>
-  <td style="width: 70px;">${Number.parseFloat(vendedor2.comisionven).toFixed(2)} </td>
-  <td style="width: 70px;">${vendedor2.nombreclave} </td>
-  <td style="width: 50px;">${vendedor2.fechaingreso} </td>
+  <td style="width: 20px;">${vendedor2.codven} </td>
+  <td style="width: 120px;">${vendedor2.nombreven} </td>
+  <td style="width: 40px;">${Number.parseFloat(vendedor2.comisionven).toFixed(2)} </td>
+  <td style="width: 40px;">${vendedor2.nombreclave} </td>
+  <td style="width: 40px;">${vendedor2.fechaingreso} </td>
   <td class="eliminarRow">Eliminar</td>
   </tr>`;
   codIni();

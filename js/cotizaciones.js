@@ -17,6 +17,7 @@ const mostrarData = (data) => {
     document.getElementById("bdatos").innerHTML = dbody;
   }
   document.getElementById('overlay').style.display='none'
+  
 };
 let buscaa = document.getElementById('busca')
 buscaa.addEventListener('click',autocompletado)
@@ -55,3 +56,16 @@ function limbiar(){
 }
 document.querySelector('table').style.display='block'
 }
+
+
+function fadePropia(selector){
+  var s = document.getElementById(selector).style;
+  s.opacity = 1;
+  (function fade(){(s.opacity-=.1)<0?s.display="none":setTimeout(fade,40)})();
+  }
+  
+    function fadeIn() {
+      const element = document.getElementById('overlay');
+      element.style.display = 'none';
+    }
+  

@@ -66,10 +66,10 @@ span.psw {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  left: 10%;
+  left: 20%;
   margin: 0 auto;
   top: 0;
-  width: 80%; /* Full width */
+  width: 60%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color:var(--negro); /* Fallback color */
@@ -77,22 +77,20 @@ span.psw {
   padding-top: 7px;
 }
 
-/* Modal Content/Box */
 .modal-content {
   background-color: var(--blanco);
-  margin: 3% auto 1% auto; /* 5% from the top, 15% from the bottom and centered */
-  padding: 0 15%;
+  margin: 5% auto 1% auto; 
+  padding: 0 25%;
   border: 1px solid var(--gris-100);
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 60%; 
 }
 
-/* The Close Button (x) */
 .close {
   position: absolute;
   right: 25px;
   top: 0;
   color: var(--negro);
-  font-size: 1em;
+  font-size: 3em;
   font-weight: bold;
 }
 
@@ -102,7 +100,6 @@ span.psw {
   cursor: pointer;
 }
 
-/* Add Zoom Animation */
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s;
@@ -126,7 +123,6 @@ span.psw {
   }
 }
 
-/* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
     display: block;
