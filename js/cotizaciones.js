@@ -14,6 +14,7 @@ const mostrarData = (data) => {
   let esNum = new Intl.NumberFormat( "es-ES",{minimumFractionDigits: 2 ,maximumFractionDigits: 7}); 
   for (let i = 0; i < data.length; i++) {
     dbody += `<tr><td>${data[i].symbol}</td><td>${esNum.format(data[i].price)}</td></tr>`;
+    //dbody += `<tr><td>${data[i].symbol}</td><td>${esNum.format(data[i].price)}</td></tr>`;
     document.getElementById("bdatos").innerHTML = dbody;
   }
   document.getElementById('overlay').style.display='none'
@@ -22,12 +23,14 @@ const mostrarData = (data) => {
 let buscaa = document.getElementById('busca')
 buscaa.addEventListener('click',autocompletado)
 var buscar = document.getElementById('buscar-pal');
+
 function buscarpar(array) {
   buscar.addEventListener("onKeyUp", autocompletado);
 }
+
 function autocompletado() {
 document.querySelector('table').style.display='none'
-  document.getElementById("demo").innerHTML = "";
+document.getElementById("demo").innerHTML = "";
   var preguntame = data;
   var pal = document.getElementById('buscar-pal').value || 'BTCUSD';
   for (indice in preguntame) {
@@ -58,12 +61,12 @@ document.querySelector('table').style.display='block'
 }
 
 
-function fadePropia(selector){
+/*function fadePropia(selector){
   var s = document.getElementById(selector).style;
   s.opacity = 1;
   (function fade(){(s.opacity-=.1)<0?s.display="none":setTimeout(fade,40)})();
   }
-  
+  */
     function fadeIn() {
       const element = document.getElementById('overlay');
       element.style.display = 'none';

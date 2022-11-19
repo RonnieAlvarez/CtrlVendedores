@@ -17,7 +17,7 @@
 
 <body class="bodyindex ">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark m-0 p-0 d-none" id="menuopciones">
-        <div class="container-fluid w-50">
+        <div class="container-fluid ">
 
             <div class="dropdown">
                 <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -37,16 +37,16 @@
         </div>
     </nav>
 
-    <nav class="container navbar w-50">
-        <span class="nav-brand fs-4 m-0 p-0 fw-bold"> Sistema de Control de Vendedores</span><br>
-        <button class="btn btn-success btn-sm p-0 m-0 ps-2 pe-4 me-5 ms-5"
+    <nav class="container navbar flex-column ">
+        <span class="nav-brand m-0 p-0 fw-bold "> Sistema de Control de Vendedores</span>
+        <button class="btn btn-success btn-sm text-center p-0 m-0 ps-2 ps-4 pe-4 me-5 ms-5"
             onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
     </nav>
 
     <main class="container">
         <div id="resultado"></div>
         <div id="id01" class="modal ">
-            <form class="modal-content animate p-5">
+            <form class="modal-content animate ">
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close"
                         title="Close Modal">&times;</span>
@@ -59,14 +59,14 @@
                     <label for="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password: 1234" name="psw" required id="psw"
                         onkeyup="saltar(event,'clickMe')"><br>
-                    <div class="container d-flex justify-content-center" style="background-color:#f1f1f1">
-                        <button class="btn btn-success btn-sm me-5" id="clickMe" type="button">Login</button>
+                    <div class="container d-flex justify-content-center letraPequena" style="background-color:#f1f1f1">
+                        <button class="btn btn-success btn-sm me-2 letraPequena" id="clickMe" type="button">Login</button>
                         <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                            class="btn btn-danger btn-sm ms-5">Cancel</button><br>
+                            class="btn btn-danger btn-sm ms-2 letraPequena">Cancel</button><br>
                     </div>
-                    <div class="container d-flex justify-content-between" style="background-color:#f1f1f1">
-                        <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
-                        <span class="psw">Forgot <a href="#">password?</a></span>
+                    <div class="container d-flex justify-content-between flex-column letraPequena" style="background-color:#f1f1f1">
+                        <label><input type="checkbox" checked="checked" name="remember" > Remember me</label>
+                        <span class="psw ">Forgot <a href="#" >password?</a></span>
                     </div>
                 </div>
             </form>

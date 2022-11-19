@@ -20,7 +20,7 @@
 
 <body class="letraPequena">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark m-0 p-0 " id="menuopciones">
-        <div class="container-fluid w-75">
+        <div class="container-fluid ">
 
             <div class="dropdown letraPequena">
                 <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -38,11 +38,11 @@
                 </ul>
             </div>
     </nav>
-    <nav class="container navbar m-0 p-0 justify-content-center w-75">
+    <nav class="container navbar m-0 p-0 justify-content-center ">
         <span class="nav-brand m-0 p-0 fw-bold " id="encabezausuario">Control de Vendedores</span>
     </nav>
 
-    <main class="container w-75">
+    <main class="container ">
         <div class="centert d-flex flex-row justify-content-center">
             <form id="venform" name="venform">
                 <span class="form-title ">Datos Vendedor &#174 : </span><span id="digitado"></span> <br>
@@ -53,7 +53,7 @@
                     pattern="[A-Za-z0-9_-]+">
                 <input type="number" class="datos" required name="comisionven" id="comisionven" onfocus="this.value=''"
                     placeholder="Comisión" onkeyup="saltar(event,'agregar')" pattern="[1,15]+" maxlength="4"><br>
-                <div class="container d-flex justify-content-end ">
+                <div class="container d-flex justify-content-center ">
                     <button type="submit" class="btn btn-success btn-sm agregar me-1 mt-2 ms-3 " id="agregar"
                         onkeyup="saltar(event,'nombreven')">Enviar</button>
                     <button class="btn btn-danger btn-sm mt-2" type="reset" id="borrar"
@@ -62,10 +62,10 @@
             </form>
         </div>
         <div class="table-responsive-sm letraPequena">
-            <table id="target1" class="centert container mt-3 table table-striped table-hover ">
-                <div class="d-sm-flex d-flex  justify-content-center letraPequena">
-                    <p class="mt-5 fw-bold">Listado de Vendedores </p><br>
-                    <div class="informacion d-flex flex-row-reverse justify-content-between">
+            <p class="mt-1 fs-6 fw-bold">Listado de Vendedores </p>
+            <table id="target1" class="centert container mt-2 table table-striped table-hover ">
+                <div class="d-flex  justify-content-center letraPequena">
+                        <div class="informacion d-flex flex-row-reverse justify-content-between">
                         <span class="fw-bold " id="cantvend"></span>
                         <span class="fecha me-3" id="fecha"></span>
                         <span id="symbol" class="symbol me-3"></span>
@@ -75,11 +75,11 @@
                 <thead>
                     <tr class="fw-bold bg-info bg-gradient m-0 p-0" onclick="seleccionafila(this)" id="myrow">
                         <td style="width: 20px;">Código</td>
-                        <td style="width: 120px;">Nombre</td>
-                        <td style="width: 40px;">Comisión</td>
-                        <td style="width: 40px;">Clave</td>
-                        <td style="width: 40px;">Fecha Ingr.</td>
-                        <td style="width: 40px;"></td>
+                        <td style="width: 40px;">Nombre</td>
+                        <td style="width: 20px;">Comisión</td>
+                        <td style="width: 20px;">Clave</td>
+                        <td style="width: 20px;">Ingreso</td>
+                        <td style="width: 20px;"></td>
                     </tr>
                 </thead>
                 <tbody id="tablebody" class="bg-success p-2 text-dark bg-opacity-10">

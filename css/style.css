@@ -39,13 +39,14 @@
 /* width: clamp(350px, 100%, 800px); */
 /*   display: grid; */
 /*   place-content: center; */
-  background-position: top;
   background-repeat: no-repeat;
+  background-size: auto;
+
 }
 .currencies {  
   background-image: url(../imgs/foreign-exchange.webp);
-  background-position: top;
   background-repeat: repeat;
+  background-size: 100vh;
 }
 body {
   background-color: var(--neutral-5);
@@ -240,14 +241,18 @@ box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
  background-color: var(--neutral-4); 
 }
 .fondo{
+  width: 50%;
   background-color: var(--neutral-4); 
   box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
   0px -3px 7px 1px rgba(0, 0, 0, 0.07);
 }
 @media (max-width: 600px) {
+  .fondo{
+    width: 100vw;
+  }
   .letraPequena{
     font-size: 0.8em;
-  }
+   }
   td {
     line-height: 0.8em;
     font-size: 0.8em;
@@ -272,7 +277,7 @@ box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
 
   }
   td{
-    padding: 3px!important;
+    padding: 5px!important;
   }
   #target1{
     padding: 2px!important;

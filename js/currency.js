@@ -12,6 +12,18 @@ function getOptions(data) {
     .map(([country, currency]) => `<option value="${country}">${country} | ${currency}</option>`)
     .join("");
 }
+/*
+const obj = {
+  ...array
+}
+for(let item in obj){
+  //console.log(item)
+  //console.log([obj[item]])
+  let [moneda, precio] = obj[item]
+  document.body.innerHTML += `<p>Moneda: ${moneda} - Precio: ${precio}</p>`
+} 
+*/
+
 
 document.getElementById("btn-convert").addEventListener("click", fetchCurrencies);
 
