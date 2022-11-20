@@ -46,7 +46,7 @@
         <div class="centert d-flex flex-row justify-content-center">
             <form id="venform" name="venform">
                 <span class="form-title ">Datos Vendedor &#174 : </span><span id="digitado"></span> <br>
-                <input type="text" class="datos " required name="codven" id="codven" placeholder="Codigo ej('001')"
+                <input type="number" class="datos " required name="codven" id="codven" placeholder="Codigo ej('001')"
                     onkeyup="saltar(event,'nombreven')" pattern="[1,15]+" autofocus maxlength="3">
                 <input style="text-transform: capitalize;" type="text" class="datos" required name="nombreven"
                     id="nombreven" onfocus="this.value=''" placeholder="Nombre" onkeyup="saltar(event,'comisionven')"
