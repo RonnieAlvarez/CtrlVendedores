@@ -5,6 +5,7 @@ function saltar(e, id) {
     if (k == 13) {
         // Si la variable id contiene "submit" enviamos el formulario
         if (id == "submit") {
+          //  console.log('submit')
             document.forms[0].submit();
         } else {
             // nos posicionamos en el siguiente input

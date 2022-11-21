@@ -46,16 +46,16 @@
         <div class="centert d-flex flex-row justify-content-center">
             <form id="venform" name="venform">
                 <span class="form-title ">Datos Vendedor &#174 : </span><span id="digitado"></span> <br>
-                <input type="number" class="datos " required name="codven" id="codven" placeholder="Codigo ej('001')"
-                    onkeyup="saltar(event,'nombreven')" pattern="[1,15]+" autofocus maxlength="3">
-                <input style="text-transform: capitalize;" type="text" class="datos" required name="nombreven"
-                    id="nombreven" onfocus="this.value=''" placeholder="Nombre" onkeyup="saltar(event,'comisionven')"
-                    pattern="[A-Za-z0-9_-]+">
-                <input type="number" class="datos" required name="comisionven" id="comisionven" onfocus="this.value=''"
-                    placeholder="Comisión" onkeyup="saltar(event,'agregar')" pattern="[1,15]+" maxlength="4"><br>
+                <input type="text" class="datos" required name="codven" id="codven" placeholder="Codigo ej('001')"
+                    maxlength="3" >
+                <input style="text-transform: capitalize;" type="text" required class="datos" name="nombreven"
+                    id="nombreven" onfocus="this.value=''" placeholder="Nombre"
+                    autofocus>
+                <input type="number" class="datos" required name="comisionven" id="comisionven" placeholder="Comisión"
+                    maxlength="5" onfocus="this.value=''" ><br>
                 <div class="container d-flex justify-content-center ">
-                    <button type="submit" class="btn btn-success btn-sm agregar me-1 mt-2 ms-3 " id="agregar"
-                        onkeyup="saltar(event,'nombreven')">Enviar</button>
+                    <button type="text" class="btn btn-success btn-sm agregar me-1 mt-2 ms-3 " id="agregar"
+                        >Enviar</button><!-- saltar(event,'nombreven') -->
                     <button class="btn btn-danger btn-sm mt-2" type="reset" id="borrar"
                         onkeyup="saltar(event,'nombreven')">Borrar</button><br>
                 </div>
@@ -63,15 +63,15 @@
         </div>
         <div class="table-responsive-sm letraPequena">
             <p class="mt-1 fs-6 fw-bold">Listado de Vendedores </p>
-            <table id="target1" class="centert container mt-2 table table-striped table-hover ">
-                <div class="d-flex  justify-content-center letraPequena">
-                        <div class="informacion d-flex flex-row-reverse justify-content-between">
-                        <span class="fw-bold " id="cantvend"></span>
-                        <span class="fecha me-3" id="fecha"></span>
-                        <span id="symbol" class="symbol me-3"></span>
-                        <span class="coti me-3" id="coti"></span>
-                    </div>
+            <div class="d-flex  justify-content-center letraPequena">
+                <div class="informacion d-flex flex-row-reverse justify-content-between">
+                    <span class="fw-bold " id="cantvend"></span>
+                    <span class="fecha me-3" id="fecha"></span>
+                    <span id="symbol" class="symbol me-3"></span>
+                    <span class="coti me-3" id="coti"></span>
                 </div>
+            </div>
+            <table id="target1" class="centert container mt-2 table table-striped table-hover ">
                 <thead>
                     <tr class="fw-bold bg-info bg-gradient m-0 p-0" onclick="seleccionafila(this)" id="myrow">
                         <td style="width: 20px;">Código</td>
@@ -112,32 +112,47 @@
 
 <script>
     miformulario = document.querySelector('#venform')
-    miformulario.codven.addEventListener('keypress', function (e) {
-        if (!soloNumeros(event)) {
-            event.preventDefault()
-        }
-    })
-    miformulario.comisionven.addEventListener('keypress', function (e) {
-        if (!soloNumeros(event)) {
-            event.preventDefault()
-        }
-    })
 
+    miformulario.codven.addEventListener('keypress', function (e) {
+        if (e.charCode == 13) {
+            event.preventDefault()
+            saltar(event, 'nombreven')
+        }
+        if (!soloNumeros(event)) {
+            event.preventDefault()
+        }
+    })
+ 
     miformulario.nombreven.addEventListener('keypress', function (e) {
+        
+        if (e.charCode == 13) {
+            event.preventDefault()
+            saltar(event, 'comisionven')
+        }
         if (!soloLetrasNumeros(e)) {
             e.preventDefault()
         }
     })
+
+    miformulario.comisionven.addEventListener('keypress', function (e) {
+       if (!soloNumeros(event)) {
+           event.preventDefault()
+           saltar(event, 'agregar')
+        }
+           if (e.charCode == 13) {
+            }
+   })
+
+
+
     function soloLetrasNumeros(e) {
         var key = e.charCode;
-        // console.log(key)
         return ((key > 97 || key < 122) && (key > 65 || key < 90) && (key = 45) && (key = 32))
     }
 
     function soloNumeros(e) {
         var key = e.charCode;
-        //console.log(key);
-        return key >= 48 && key <= 57;
+        return key == 46 || key >= 48 && key <= 57;
     }
 </script>
 

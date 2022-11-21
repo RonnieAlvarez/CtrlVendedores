@@ -144,7 +144,6 @@ function codifica(array, element) {
 function agregar() {
   // agregar los nuevos registros actualiza la informacion almacenada en la sessionstorage
   let resbusquedavend = existevendedor(document.getElementById("codven").value);
-  //console.log("resbusqueda");
   if (resbusquedavend != false) {
     document.getElementById("nombreven").value = "";
     document.getElementById("comisionven").value = 0;
@@ -153,11 +152,13 @@ function agregar() {
   let codven = document.getElementById("codven").value;
   let nombreven = document.getElementById("nombreven").value
   let comisionven = document.getElementById("comisionven").value;
-  //console.log("comisionven");
+  console.log(typeof comisionven)
   vendedor2.codven = codven;
   vendedor2.nombreven = capitalize(nombreven)
-  let campocomision = $.trim($('#comisionven').val())
-    if (campocomision==="") {
+
+  let campocomision = comisionven.trim()
+  
+  if (campocomision==="") {
     vendedor2.comisionven = 0.00;
   } else {vendedor2.comisionven = Number.parseFloat(comisionven).toFixed(2);}
   //console.log("vendedor2.comisionven = Number.parseFloat(comisionven).toFixed(2)");
@@ -179,10 +180,10 @@ function agregar() {
       modificant((arrayvendedores.length || 0));
       lineaven();
     }
-/*     console.log(vendedor2.comisionven);
+  /*   console.log(vendedor2.comisionven);
     console.log(Number.parseFloat(comisionven).toFixed(2));
-    console.log(comisionven);
- */}
+    console.log(comisionven); */
+}
 function ordenarray(){
   arrayvendedores.sort(function(a,b){
     if (a.codven > b.codven) {
@@ -198,7 +199,8 @@ function ordenarray(){
 }
 function capitalize(word) {
  // console.log(word[0].toUpperCase() + word.slice(1));
-  return word[0].toUpperCase() + word.slice(1);
+ let respuesta = word.charAt(0).toUpperCase() + word.slice(1);
+return respuesta
 }
 
 function Cambiartexto(id, texto,etiqueta) {
