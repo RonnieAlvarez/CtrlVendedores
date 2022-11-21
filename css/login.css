@@ -80,9 +80,10 @@ span.psw {
 .modal-content {
   background-color: var(--blanco);
   margin: 5% auto 1% auto;
-  padding: 0 25%;
+  padding: 0 25px;
   border: 1px solid var(--gris-100);
-  width: 60%;
+  left: 10%;
+  width: 80%;
 }
 
 .close {

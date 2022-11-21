@@ -13,12 +13,10 @@ const mostrarData = (data) => {
   let dbody = "";
   let esNum = new Intl.NumberFormat( "es-ES",{minimumFractionDigits: 2 ,maximumFractionDigits: 7}); 
   for (let i = 0; i < data.length; i++) {
-    dbody += `<tr><td>${data[i].symbol}</td><td>${esNum.format(data[i].price)}</td></tr>`;
-    //dbody += `<tr><td>${data[i].symbol}</td><td>${esNum.format(data[i].price)}</td></tr>`;
+    dbody += `<tr><td style="text-align:center width:50px">${data[i].symbol}</td><td style="text-align:rigth width:50px">${esNum.format(data[i].price)}</td></tr>`;
     document.getElementById("bdatos").innerHTML = dbody;
   }
   document.getElementById('overlay').style.display='none'
-  
 };
 let buscaa = document.getElementById('busca')
 buscaa.addEventListener('click',autocompletado)

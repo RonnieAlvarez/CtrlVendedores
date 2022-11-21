@@ -16,7 +16,7 @@
 
 
 <body class="bodyindex ">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark m-0 p-0 d-none" id="menuopciones">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-warning m-0 p-2 d-none" id="menuopciones">
         <div class="container-fluid ">
 
             <div class="dropdown">
@@ -60,13 +60,15 @@
                     <input type="password" placeholder="Enter Password: 1234" name="psw" required id="psw"
                         onkeyup="saltar(event,'clickMe')"><br>
                     <div class="container d-flex justify-content-center letraPequena" style="background-color:#f1f1f1">
-                        <button class="btn btn-success btn-sm me-2 letraPequena" id="clickMe" type="button">Login</button>
+                        <button class="btn btn-success btn-sm me-2 letraPequena" id="clickMe"
+                            type="button">Login</button>
                         <button type="button" onclick="document.getElementById('id01').style.display='none'"
                             class="btn btn-danger btn-sm ms-2 letraPequena">Cancel</button><br>
                     </div>
-                    <div class="container d-flex justify-content-between flex-column letraPequena" style="background-color:#f1f1f1">
-                        <label><input type="checkbox" checked="checked" name="remember" > Remember me</label>
-                        <span class="psw ">Forgot <a href="#" >password?</a></span>
+                    <div class="container d-flex justify-content-between flex-column letraPequena"
+                        style="background-color:#f1f1f1">
+                        <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
+                        <span class="psw ">Forgot <a href="#">password?</a></span>
                     </div>
                 </div>
             </form>

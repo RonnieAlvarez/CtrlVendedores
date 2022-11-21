@@ -19,7 +19,7 @@
 </style>
 
 <body class="letraPequena">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark m-0 p-0 " id="menuopciones">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-warning m-0 p-2 " id="menuopciones">
         <div class="container-fluid ">
 
             <div class="dropdown letraPequena">
@@ -137,9 +137,9 @@
     miformulario.comisionven.addEventListener('keypress', function (e) {
        if (!soloNumeros(event)) {
            event.preventDefault()
-           saltar(event, 'agregar')
         }
-           if (e.charCode == 13) {
+        if (e.charCode == 13) {
+               saltar(event, 'agregar')
             }
    })
 
