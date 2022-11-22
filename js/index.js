@@ -29,6 +29,16 @@ function iniciar(){
    sessionStorage.setItem("UsuarioActual",usuario2.nombreusu)
    document.getElementById('menuopciones').classList.remove('d-none');
    modal.style.display = "none";
+   Bienvenido()
 }
 }
 
+function Bienvenido() {    
+  Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Bienvenido!! Selecciona las opciones del Dropdown Menu',
+      showConfirmButton: false,
+      timer: 2500
+    })
+  }

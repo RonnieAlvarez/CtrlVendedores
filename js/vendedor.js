@@ -118,13 +118,42 @@ function borraVendelArray(arr, pos) {
 }
 function vclick(e) {
   // funcion que elimina la fila de la tabla presionando la ultima casilla "eliminar"
-  if (e.target.matches(".eliminarRow")) {
-    let tindex = e.target.parentNode.rowIndex;
-    tablatitulos.deleteRow(tindex);
-    borraVendelArray(arrayvendedores, tindex);
-    codIni();
-    document.getElementById("nombreven").focus();
-  }
+  swalWithBootstrapButtons
+    .fire({
+      title: "Esta Seguro de eliminar este vendedor?",
+      text: "No se podra recuperar la información de este Vendedor",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Si, Eliminar!",
+      cancelButtonText: "No, cancelar!",
+      reverseButtons: true,
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        if (e.target.matches(".eliminarRow")) {
+          let tindex = e.target.parentNode.rowIndex;
+          tablatitulos.deleteRow(tindex);
+          borraVendelArray(arrayvendedores, tindex);
+          codIni();
+          //document.getElementById("nombreven").focus();
+        }
+        swalWithBootstrapButtons.fire(
+          "Borrado!",
+          "Los datos del vendedor fueron eliminados.",
+          "success"
+        );
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          "Cancelado",
+          "Los datos del vendedor se conservan :)",
+          "error"
+        );
+      }
+    });
+  document.getElementById("nombreven").focus();
 }
 
 function codifica(array, element) {
@@ -276,5 +305,15 @@ function zfill(number, width) {
     }
   }
 }
+
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: "btn btn-success",
+    cancelButton: "btn btn-danger",
+  },
+  buttonsStyling: false,
+});
+
+
 
 export { vendedor2 as vendedor2 };

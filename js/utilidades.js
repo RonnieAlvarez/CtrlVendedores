@@ -24,3 +24,6 @@ function seleccionafila(x) {
     x.style.background = "#F1F1F1";
 }
 
+function $(param){
+    return document.querySelector(param)
+}
