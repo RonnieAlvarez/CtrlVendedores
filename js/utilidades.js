@@ -5,9 +5,11 @@ function saltar(e, id) {
   if (k == 13) {
     // Si la variable id contiene "submit" enviamos el formulario
     if (id == "submit") {
+      e.preventDefault()
       document.forms[0].submit();
     } else {
       // nos posicionamos en el siguiente input
+      e.preventDefault()
       document.getElementById(id).focus();
     }
   }
