@@ -1,4 +1,5 @@
 import { vendedor } from "./clases.js";
+import "./utilidades.js";
 
 const codvenVacio = () => codven == "" || vendedor2.codven.length < 3;
 const vendedor2 = new vendedor();
@@ -34,11 +35,8 @@ document.getElementById("nombreven").addEventListener("input", (e) => {
 });
 //*-*-*-*-*-*-*-*-*-*-*-*-*-*FUNCIONES*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 function almacenamiento() {
-  // verificar si existe el arreglo
   if (localStorage.getItem("myArray")) {
-    //cargar el arreglo
     arrayvendedores = JSON.parse(localStorage.getItem("myArray"));
-    //deplegar el arreglo
     for (const key in arrayvendedores) {
       let tablaven = document.getElementById("target1");
       tablaven.innerHTML += `<tr>
@@ -55,14 +53,11 @@ function almacenamiento() {
       </tr>`;
     }
     return true;
-    //establece el codigo inicial
-    //codIni()
   } else {
     return false;
   }
 }
 function fechaactual() {
-  // coloca la fecha en color azul debajo del titulo Listado de vendedores de forma ASINCRONA 5 segundo despues de cargado el titulo
   setTimeout(() => {
     const DateTime = luxon.DateTime;
     const ahoraa = DateTime.now();
@@ -87,7 +82,6 @@ function coti() {
     });
 }
 function codIni() {
-  //verifica el codigo del vendedor y agregar ceros a la izq en zfill
   let tamano = arrayvendedores.length;
   if (tamano > 0) {
     mayor =
@@ -95,7 +89,7 @@ function codIni() {
     value = zfill(mayor + 1, 3);
     value = value || {};
     mayor = parseInt(value);
-    if (parseInt(mayor) <= parseInt(document.querySelector("input").value)) {
+    if (parseInt(mayor) <= parseInt($("input").value)) {
       value = zfill(mayor + 1, 3);
     }
   } else {
@@ -104,7 +98,7 @@ function codIni() {
       mayor = 1;
     }
   }
-  document.querySelector("input").value = value;
+  $("input").value = value;
 }
 
 function borraVendelArray(arr, pos) {
@@ -135,17 +129,13 @@ function vclick(e) {
           tablatitulos.deleteRow(tindex);
           borraVendelArray(arrayvendedores, tindex);
           codIni();
-          //document.getElementById("nombreven").focus();
         }
         swalWithBootstrapButtons.fire(
           "Borrado!",
           "Los datos del vendedor fueron eliminados.",
           "success"
         );
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
         swalWithBootstrapButtons.fire(
           "Cancelado",
           "Los datos del vendedor se conservan :)",
@@ -167,7 +157,6 @@ function codifica(array, element) {
 }
 
 function agregar() {
-  // agregar los nuevos registros actualiza la informacion almacenada en la sessionstorage
   let resbusquedavend = existevendedor(document.getElementById("codven").value);
   if (resbusquedavend != false) {
     document.getElementById("nombreven").value = "";
@@ -180,9 +169,7 @@ function agregar() {
   nombreven = capitalize(nombreven);
   vendedor2.codven = codven;
   vendedor2.nombreven = capitalize(nombreven);
-
   let campocomision = comisionven.trim();
-
   if (campocomision === "") {
     vendedor2.comisionven = 0.0;
   } else {
@@ -215,7 +202,6 @@ function ordenarray() {
     if (a.codven < b.codven) {
       return -1;
     }
-    // a must be equal to b
     return 0;
   });
 }
@@ -237,7 +223,6 @@ function modificant(texto) {
 }
 
 function lineaven() {
-  //crea cada linea de la tabla con informacion digitada
   let tablaven = document.getElementById("target1");
   tablaven.innerHTML += `<tr>
   <td style="width: 20px;">${vendedor2.codven} </td>
@@ -255,12 +240,12 @@ function lineaven() {
 }
 
 function borrar() {
-  // borra los inputs de captura de datos
-  document.querySelector("form-vendedor").reset();
+  //  document.querySelector(param) remplazado por funcion personal de ${param} ubicada en utilidades.js
+  $("form-vendedor").reset();
 }
 
 function fechar() {
-  //crea la fecha en formato "K291022"
+  //formato "K291022"
   let d = new Date();
   let dia = new Array(7);
   let anio = d.getFullYear().toString();
@@ -287,10 +272,9 @@ function existevendedor(codven) {
   }
 }
 function zfill(number, width) {
-  let numberOutput = Math.abs(number); /* Valor absoluto del número */
-  let length = number.toString().length; /* Largo del número */
-  let zero = "0"; /* String de cero */
-
+  let numberOutput = Math.abs(number);
+  let length = number.toString().length;
+  let zero = "0";
   if (width <= length) {
     if (number < 0) {
       return "-" + numberOutput.toString();
@@ -313,7 +297,5 @@ const swalWithBootstrapButtons = Swal.mixin({
   },
   buttonsStyling: false,
 });
-
-
 
 export { vendedor2 as vendedor2 };

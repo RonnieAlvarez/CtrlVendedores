@@ -1,60 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Moneda</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Moneda</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+  <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
 </head>
+
 <body class="currencies">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-warning m-0 p-2 " id="menuopciones">
-        <div class="container-fluid ">
-            
-        <div class="dropdown">
-            <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown Menu
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="../index.html">Inicio</a></li>
-              <li><a class="dropdown-item" href="./vendedor.html">Vendedores</a></li>
-              <li><a class="dropdown-item" href="./cotizaciones.html">CryptoMonedas</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item active" href="./currency.html">Conversor de Divisas</a></li>
-            </ul>
-          </div>
-    </nav>
-    <nav class="container navbar justify-content-center " >
-        <span class="nav-brand fs-3 m-0 p-0 fw-bold" id="encabezausuario">Control de Vendedores</span><br>
-    </nav>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-warning m-0 p-2 " id="menuopciones">
+    <div class="container-fluid ">
 
-
-    <section class="container currency_main justify-content-center ">
-        
-     <form class="form_currency container justify-content-center mb-3  mt-sm-1">
-        <h4 class="text-center">Conversor de moneda</h4>
-        <div class="d-grid  col-sm-6 offset-sm-3">
-        <input  id="amount" type="number" value="1" />
-        <select id="primary" class="input"></select>
-        <select id="secondary" class="input"></select>   
-        <input id="btn-convert" type="button" value="Convert"  />   
+      <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown Menu
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" href="../index.html">Inicio</a></li>
+          <li><a class="dropdown-item" href="./vendedor.html">Vendedores</a></li>
+          <li><a class="dropdown-item" href="./cotizaciones.html">CryptoMonedas</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item active" href="./currency.html">Conversor de Divisas</a></li>
+        </ul>
       </div>
-      </form>
-      
-      <p id="result" style="display:none;">
-        <span id="txt-primary"></span>
-        <span id="txt-secondary"></span>
-      </p>
+      <div>
+        <img src="../imgs/favicon.ico" alt="logo" class="logo_exchange">
+      </div>
+  </nav>
+  <nav class="container navbar justify-content-center ">
+    <span class="nav-brand fs-4 m-0 p-0 fw-bold" id="encabezausuario">Conversor de Monedas</span>
+  </nav>
 
-    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+  <section class="container currency_main justify-content-center ">
+
+    <form class="form_currency container justify-content-center mb-3  mt-sm-1">
+
+      <div class="d-grid  col-sm-6 offset-sm-3 mt-2">
+        <input id="amount" type="number" value="1" />
+        <select id="primary" class="input"></select>
+        <select id="secondary" class="input"></select>
+        <input id="btn-convert" type="button" value="Convert" />
+      </div>
+    </form>
+
+    <p id="result" style="display:none;">
+      <span id="txt-primary"></span>
+      <span id="txt-secondary"></span>
+    </p>
+
+
+    <div class="container pt-0 mb-0 section-content mobile-padding grey-background"
+      style="position: relative; max-height: 40px;">
+      <div class="mb-0">
+        <div class="logos">
+          <img src="../imgs/logos-2.png" alt="logos cryptos">
+        </div>
+        <div class="logos logos2">
+          <img src="../imgs/logos-2.png" alt="logos cryptos">
+        </div>
+        <!-- <span class="nav-brand m-0 p-0 fw-bold " id="encabezausuario">Cotizaciones de Criptomonedas</span> -->
+      </div>
+    </div>
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
-<script src="../js/currency.js"></script>
+  <script src="../js/currency.js"></script>
 </body>
+
 </html>

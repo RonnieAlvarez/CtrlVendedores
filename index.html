@@ -14,7 +14,6 @@
     <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
 </head>
 
-
 <body class="bodyindex ">
     <nav class="navbar navbar-expand-sm navbar-dark bg-warning m-0 p-2 d-none" id="menuopciones">
         <div class="container-fluid ">
@@ -38,12 +37,24 @@
     </nav>
 
     <nav class="container navbar flex-column ">
-        <span class="nav-brand m-0 p-0 fw-bold "> Sistema de Control de Vendedores</span>
+        <span class="nav-brand m-0 p-0 fw-bold "> Sistema de Control de Criptomonedas</span>
         <button class="btn btn-success btn-sm text-center p-0 m-0 ps-2 ps-4 pe-4 me-5 ms-5"
             onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
     </nav>
 
     <main class="container">
+
+        <div class="container pt-0 mb-0 section-content mobile-padding " style="position: relative; max-height: 40px;">
+            <div class="mb-0">
+                <div class="logos">
+                    <img src="../imgs/logos-2.png" alt="logos cryptos">
+                </div>
+                <div class="logos logos2">
+                    <img src="../imgs/logos-2.png" alt="logos cryptos">
+                </div>
+            </div>
+        </div>
+
         <div id="resultado"></div>
         <div id="id01" class="modal ">
             <form class="modal-content animate ">
@@ -85,16 +96,16 @@
 
     </main>
     <script>
-    const  Bienvenido= ()=>{    
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Bienvenido!! Selecciona las opciones del Menu',
-            showConfirmButton: false,
-            timer: 1500
-          })
+        const Bienvenido = () => {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Bienvenido!! Selecciona las opciones del Menu',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
-</script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
@@ -103,4 +114,5 @@
 <script type="module" src="./js/index.js"></script>
 <script type="text/JavaScript" src="./js/utilidades.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </html>

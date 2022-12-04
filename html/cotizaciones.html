@@ -11,10 +11,11 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/cotizaciones-css.css">
     <link rel="stylesheet" href="../css/menu.css">
-    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
 </head>
 
 <body class="currencies">
+
     <div id="overlay">
         <div class="cv-spinner">
             <span class="spinner"></span>
@@ -23,9 +24,9 @@
     <script>
         document.getElementById('overlay').style.display = 'block'
     </script>
+
     <nav class="navbar navbar-expand-sm navbar-dark bg-warning m-0 p-2 " id="menuopciones">
         <div class="container-fluid ">
-
             <div class="dropdown ">
                 <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
@@ -41,18 +42,38 @@
                     <li><a class="dropdown-item" href="./currency.html">Conversor de Divisas</a></li>
                 </ul>
             </div>
+            <div>
+                <span class="fs-4 m-0 p-0 fw-bold " id="encabezausuario">Cotizaciones de Criptomonedas</span>
+            </div>
+            <div>
+                <img src="../imgs/favicon.ico" alt="logo" class="logo_exchange">
+            </div>
         </div>
     </nav>
 
+    <div class="container pt-0 mb-0 section-content mobile-padding grey-background"
+        style="position: relative; max-height: 40px;">
+        <div class="mb-0">
+            <div class="logos">
+                <img src="../imgs/logos-2.png" alt="logos cryptos">
+            </div>
+            <div class="logos logos2">
+                <img src="../imgs/logos-2.png" alt="logos cryptos">
+            </div>
+            <!-- <span class="nav-brand m-0 p-0 fw-bold " id="encabezausuario">Cotizaciones de Criptomonedas</span> -->
+        </div>
+    </div>
+
+
+
     <main class="pcontainer d-flex flex-column align-items-center fondo ">
-        <h4>Cotizaciones de Criptomonedas</h4>
-        <div >
-            <input type="text" id="buscar-pal" class="mb-2"> <button id="busca" class="busca">Buscar</button>
+        <div id="botbus">
+            <input type="text" id="buscar-pal" placeholder="Buscar Crypto" class="mb-2 mt-2" style="width:120px ;">
+            <button id="busca" class="busca">Buscar</button>
         </div>
         <div>
             <ul id="demo" class="demoul"></ul>
         </div>
-
         <table class="tabla-css">
             <thead class="sticky-top">
                 <tr>
@@ -61,15 +82,35 @@
                 </tr>
             </thead>
             <tbody id="bdatos">
-
             </tbody>
         </table>
+        <button class="toTop" id="toTop">
+            <svg viewBox="0 0 24 24">
+                <path d="m4 16 8-8 8 8"></path>
+            </svg>
+        </button>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
-    <script src="../js/cotizaciones.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="../js/cotizaciones.js"></script>
+    <script>
+        const toTop = (() => {
+            let button = document.getElementById("toTop");
+            window.onscroll = () => {
+                button.classList[
+                    (document.documentElement.scrollTop > 200) ? "add" : "remove"
+                ]("is-visible")
+            }
+            button.onclick = () => {
+                window.scrollTo({
+                    top: 0, behavior: "smooth"
+                })
+            }
+        })();
+
+    </script>
 </body>
 
 </html>

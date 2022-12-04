@@ -37,6 +37,7 @@ body {
   border-color: var(--primary-2);
   margin: 0%; 
   font-size: 0.8em;
+  justify-self: center;
 }
 #buscar-pal{
   border-radius: 7px;
