@@ -1,4 +1,4 @@
-![](https://www.malwarebytes.com/blog/images/uploads/2017/11/shutterstock_687394909.jpg)
+![imagen bitcoin](https://www.malwarebytes.com/blog/images/uploads/2017/11/shutterstock_687394909.jpg){height='150px'}
 # Control de Vendedores Crypo, Cotización de monedas y Conversion de divisas.
 
 Proyecto JavaScript **CoderHouse**
